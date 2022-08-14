@@ -24,10 +24,9 @@ También podrá visualizar todas las tareas del equipo o filtrar las tareas prop
 :heavy_check_mark: Debounce
 :heavy_check_mark: Redux
 
-### Para levantar el proyecto usar:
+### Visite la página web en: 
 
-- npm install
-- npm start
+https://gefurs.github.io/go-scrum/
 
 ### UUID de un Equipo ya creado:
 
@@ -61,7 +60,7 @@ The user can also view all the team's tasks or filter his own tasks, search for 
 :heavy_check_mark: Debounce
 :heavy_check_mark: Redux
 
-### To run the project use:
+### Visit de website here:
 
 - npm install
 - npm start

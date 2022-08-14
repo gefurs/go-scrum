@@ -36,8 +36,15 @@ function App() {
             <motion.div initial="out" animate="in" exit="out" variants={pageTransition}>
               <Register />
             </motion.div>
-          
           } />
+
+          <Route path="/registered/:teamID" element={
+              <motion.div initial="out" animate="in" exit="out" variants={pageTransition}>
+                <Registered />
+              </motion.div>
+          } />
+
+
           <Route path="*" element={
             <motion.div initial="out" animate="in" exit="out" variants={pageTransition}>
               <Suspense fallback={<>...</>}>
@@ -59,13 +66,13 @@ function App() {
               </motion.div>
             </ProtectedRoute>
           } />
-          <Route path="/donate" element={
+          {/* <Route path="/donate" element={
             <ProtectedRoute>
               <motion.div initial="out" animate="in" exit="out" variants={pageTransition}>
                 <Donate />
               </motion.div>
             </ProtectedRoute>
-          } />
+          } /> */}
         </Routes>
     </AnimatePresence>
   );

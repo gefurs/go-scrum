@@ -22,8 +22,6 @@ const Header = () => {
     return(
         <StyledHeader>
             <Image src={logo} alt="logo"/>
-            {console.log(process.env)}
-            <Environment>Entorno: {process.env.NODE_ENV}, corriendo en el puerto {process.env.REACT_APP_PORT}</Environment>
             <Container>
                 <Button onClick={() => navigate("/donate")}>Donar</Button>
                 <Text>Tareas creadas: {tasks?.length}</Text>
@@ -112,14 +110,6 @@ const XButton = styled.button`
     font-weight: 500;
     cursor: pointer;
     color: ${theme.colors.orange};
-
-    @media screen and (min-width: ${theme.viewport.desktop}) {
-        font-size: 15px;
-    }
-`
-
-const Environment = styled.span`
-    font-size: 9px;
 
     @media screen and (min-width: ${theme.viewport.desktop}) {
         font-size: 15px;

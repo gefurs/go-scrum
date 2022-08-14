@@ -79,7 +79,6 @@ const Register = () => {
         .then((data) => 
             navigate("/registered/" + data?.result?.user?.teamID)
         )
-        
     }
 
     const validationSchema = Yup.object().shape({
