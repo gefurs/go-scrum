@@ -180,7 +180,7 @@ const Register = () => {
                 <ButtonSubmit type="submit">Enviar</ButtonSubmit>
                 <ButtonMessageContainer>
                     <ButtonMessage>Ir a </ButtonMessage>
-                    <LinkToLoginPage to={"/login"}>Iniciar sesión</LinkToLoginPage>
+                    <LinkToLoginPage to={"/registered"}>Iniciar sesión</LinkToLoginPage>
                 </ButtonMessageContainer>
                 
             </RegisterForm>

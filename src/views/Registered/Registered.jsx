@@ -13,7 +13,7 @@ function Registered(){
                 <Title>El TeamID de tu equipo es:</Title>
                 <Span>{teamID}</Span>
             </TextContainer>
-            <LinkToLogin to={"/"}>Ir a Login</LinkToLogin>
+            <LinkToHome to={"/"}>Continuar</LinkToHome>
         </NotFoundStyled>
     );
 }
@@ -69,7 +69,7 @@ const Span = styled.span`
     }
 `
 
-const LinkToLogin = styled(Link)`
+const LinkToHome = styled(Link)`
     margin-top: 2.4rem;
     height: 2.4rem;
     width: 6.2rem;
