@@ -29,8 +29,6 @@ const Tasks = () => {
         return state.tasksReducer;
     });
 
-    // console.log(owner);
-
     useEffect(() => {
         if(tasks?.length) {
             setList(tasks);
