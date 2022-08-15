@@ -7,6 +7,7 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useSelector, useDispatch } from "react-redux";
 import { getTasks, deleteTask, editStatusTask } from "../../../store/actions/tasksActions";
+import { useNavigate } from "react-router-dom";
 const debounce = require("lodash.debounce");
 
 const Tasks = () => {
@@ -18,12 +19,14 @@ const Tasks = () => {
     const [search, setSearch] = useState("");
     
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const options = ["Seleccionar una prioridad", "ALL", "LOW", "MEDIUM", "HIGH"];
 
     useEffect(() => {
         dispatch(getTasks(owner === "me" ? "/me" : ""))
-    }, [dispatch, owner]);
+        navigate("/");
+    }, [dispatch, owner, navigate]);
 
     const { loading, error, tasks } = useSelector(state => {
         return state.tasksReducer;
@@ -38,7 +41,7 @@ const Tasks = () => {
 
     useEffect(() => {
         if(search) {
-            setRenderList(list?.filter((item) => item.title.startsWith(search) ));
+            setRenderList(list?.filter((item) => item.title.startsWith(search)));
         } else {
             setRenderList(list);
         }
@@ -62,7 +65,7 @@ const Tasks = () => {
     }
 
     const handleSearch = debounce(e => {
-        setSearch(e?.target?.value)
+        setSearch(e?.target?.value) 
     }, 1000);
 
     const handleDeleteCard = (id) => {

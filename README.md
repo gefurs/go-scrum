@@ -26,7 +26,7 @@ También podrá visualizar todas las tareas del equipo o filtrar las tareas prop
 
 ### Visite la página web en: 
 
-https://gefurs.github.io/go-scrum/
+<a href="https://gefurs.github.io/go-scrum/" target="_blank">https://gefurs.github.io/go-scrum/</a>
 
 ### UUID de un Equipo ya creado:
 
@@ -62,8 +62,7 @@ The user can also view all the team's tasks or filter his own tasks, search for 
 
 ### Visit de website here:
 
-- npm install
-- npm start
+<a href="https://gefurs.github.io/go-scrum/" target="_blank">https://gefurs.github.io/go-scrum/</a>
 
 ### UUID of a Team already created:
 

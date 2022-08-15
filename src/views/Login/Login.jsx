@@ -9,8 +9,6 @@ import { sweetAlert } from "../../utils/sweetAlert";
 
 const { REACT_APP_API_URL } = process.env;
 
-// import axios from "axios";
-
 const Login = () => {
     const [passwordShown, setPasswordShown] = useState(false);
 

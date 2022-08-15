@@ -76,10 +76,14 @@ const Register = () => {
             }),
         })
         .then((response) => response.json())
-        .then((data) => 
+        .then((data) => {
             navigate("/registered/" + data?.result?.user?.teamID)
+            console.log(data?.result?.user?.teamID, teamID)
+        }
         )
     }
+
+    
 
     const validationSchema = Yup.object().shape({
         userName: Yup.string().min(4, messages.invalidUserName).required(messages.empty),
