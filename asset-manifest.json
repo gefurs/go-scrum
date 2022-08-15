@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/go-scrum/static/css/main.8b04eb8b.css",
-    "main.js": "/go-scrum/static/js/main.69ae01b1.js",
+    "main.js": "/go-scrum/static/js/main.2b64db10.js",
     "static/js/606.ef1a50eb.chunk.js": "/go-scrum/static/js/606.ef1a50eb.chunk.js",
     "static/media/mercadoPagoImage.png": "/go-scrum/static/media/mercadoPagoImage.b1e68c4a5cc7d60717c4.png",
     "static/media/welcome.png": "/go-scrum/static/media/welcome.8ed4b45779ae310b4658.png",
     "static/media/notFoundImage.png": "/go-scrum/static/media/notFoundImage.e49816fd955604c06e42.png",
     "index.html": "/go-scrum/index.html",
     "main.8b04eb8b.css.map": "/go-scrum/static/css/main.8b04eb8b.css.map",
-    "main.69ae01b1.js.map": "/go-scrum/static/js/main.69ae01b1.js.map",
+    "main.2b64db10.js.map": "/go-scrum/static/js/main.2b64db10.js.map",
     "606.ef1a50eb.chunk.js.map": "/go-scrum/static/js/606.ef1a50eb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8b04eb8b.css",
-    "static/js/main.69ae01b1.js"
+    "static/js/main.2b64db10.js"
   ]
 }
