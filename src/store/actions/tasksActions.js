@@ -22,7 +22,7 @@ export const getTasks = (path) => dispatch => {
 
     fetch(`${REACT_APP_API_URL}/task${path}`, {
         headers: {
-            "Authorization": `Bearer ${token}`,
+            "Authorization": "Bearer " + localStorage.getItem("token"),
             "Content-Type": "application/json",
         },
     })
@@ -37,7 +37,7 @@ export const deleteTask = (id) => dispatch => {
     fetch(`${REACT_APP_API_URL}/task/${id}`, {
         method: "DELETE",
         headers: {
-            "Authorization": `Bearer ${token}`,
+            "Authorization": "Bearer " + localStorage.getItem("token"),
             "Content-Type": "application/json",
         },
     })
