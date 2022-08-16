@@ -51,22 +51,13 @@ function App() {
               </motion.div>
             </ProtectedRoute>
           } />
-
           <Route path="/registered/:teamID" element={
-              <motion.div initial="out" animate="in" exit="out" variants={pageTransition}>
-                <Registered />
-              </motion.div>
-          } />
-
-
-
-          {/* <Route path="/registered/:teamID" element={
             <ProtectedRoute>
               <motion.div initial="out" animate="in" exit="out" variants={pageTransition}>
                 <Registered />
               </motion.div>
             </ProtectedRoute>
-          } /> */}
+          } />
           <Route path="/donate" element={
             <ProtectedRoute>
               <motion.div initial="out" animate="in" exit="out" variants={pageTransition}>

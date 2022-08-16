@@ -22,12 +22,7 @@ const Tasks = () => {
     const options = ["Seleccionar una prioridad", "ALL", "LOW", "MEDIUM", "HIGH"];
 
     useEffect(() => {
-        if(owner === "me") {
-            dispatch(getTasks("/me"));
-        } else {
-            dispatch(getTasks(""));
-        }
-        // dispatch(getTasks(owner === "me" ? "/me" : ""))
+        dispatch(getTasks(owner === "me" ? "/me" : ""))
     }, [dispatch, owner]);
 
     const { loading, error, tasks } = useSelector(state => {
@@ -35,9 +30,11 @@ const Tasks = () => {
     });
 
     useEffect(() => {
-        if(tasks?.length) {
+        if(tasks?.length !== 0) {
             setList(tasks);
             setRenderList(tasks);
+        } else {
+            setList(tasks);
         } 
     }, [tasks]);
 
@@ -129,12 +126,12 @@ const Tasks = () => {
                 </TasksForm>
 
                 <CategoriesContainer>
-                    {renderList?.length === 0 ? (
-                        <NoTasks>No hay tareas creadas</NoTasks>
-                    ) : loading ? 
-                        <>
+                    {renderList?.length === 0 ? (<NoTasks>No hay tareas creadas</NoTasks>) 
+                    : (loading ? (
+                        <> 
                             <Skeleton count={3} height={180}/> 
                         </>
+                        )                     
                     : (
                         <>
                             <CardsList>
@@ -150,7 +147,7 @@ const Tasks = () => {
                                 {renderColumnCards("FINISHED")}
                             </CardsList> 
                         </>
-                    )}
+                    ))}
                 </CategoriesContainer>
         </TasksStyled>
     );

@@ -12,7 +12,6 @@ const { REACT_APP_API_URL } = process.env;
 
 const NewTask = () => {
     const [data, setData] = useState();
-    const token = localStorage.getItem("token");
 
     const dispatch = useDispatch();
 
@@ -24,7 +23,7 @@ const NewTask = () => {
         fetch(`${REACT_APP_API_URL}/task/data`, {
             method: "GET",
             headers: {
-                "Authorization": `Bearer ${token}`,
+                "Authorization": "Bearer " + localStorage.getItem("token"),
                 "Content-Type": "application/json",
             },
         })

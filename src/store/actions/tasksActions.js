@@ -1,7 +1,6 @@
 import {TASKS_REQUEST, TASKS_SUCCESS, TASKS_FAILURE} from "../types";
 
 const { REACT_APP_API_URL } = process.env;
-const token = localStorage.getItem("token");
 
 export const tasksRequest = () => ({
     type: TASKS_REQUEST,
@@ -56,7 +55,7 @@ export const editStatusTask = (data) => dispatch => {
     fetch(`${REACT_APP_API_URL}/task/${data._id}`, {
         method: "PATCH",
         headers: {
-            "Authorization": `Bearer ${token}`,
+            "Authorization": "Bearer " + localStorage.getItem("token"),
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
@@ -79,7 +78,7 @@ export const createTask = (values) => dispatch => {
     fetch(`${REACT_APP_API_URL}/task/`, {
         method: "POST",
         headers: {
-            "Authorization": `Bearer ${token}`,
+            "Authorization": "Bearer " + localStorage.getItem("token"),
             "Content-Type": "application/json",
         },
         body: JSON.stringify({

@@ -68,7 +68,7 @@ const Register = () => {
                     userName: values.userName,
                     password: values.password,
                     email: values.email,
-                    teamID,
+                    teamID: teamID,
                     role: values.role,
                     continent: values.continent,
                     region: values.region,
@@ -78,12 +78,8 @@ const Register = () => {
         .then((response) => response.json())
         .then((data) => {
             navigate("/registered/" + data?.result?.user?.teamID)
-            console.log(data?.result?.user?.teamID, teamID)
-        }
-        )
+        });
     }
-
-    
 
     const validationSchema = Yup.object().shape({
         userName: Yup.string().min(4, messages.invalidUserName).required(messages.empty),
@@ -184,7 +180,7 @@ const Register = () => {
                 <ButtonSubmit type="submit">Enviar</ButtonSubmit>
                 <ButtonMessageContainer>
                     <ButtonMessage>Ir a </ButtonMessage>
-                    <LinkToLoginPage to={"/registered"}>Iniciar sesión</LinkToLoginPage>
+                    <LinkToLoginPage to={"/login"}>Iniciar sesión</LinkToLoginPage>
                 </ButtonMessageContainer>
                 
             </RegisterForm>
