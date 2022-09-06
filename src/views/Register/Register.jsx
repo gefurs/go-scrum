@@ -7,6 +7,7 @@ import * as Yup from "yup";
 import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 import theme from "../../styles/Theme";
+import Swal from "sweetalert2";
 
 const { REACT_APP_API_URL } = process.env;
 
@@ -55,6 +56,33 @@ const Register = () => {
         setFieldValue("onTeam", !formik.values.onTeam);
     }
 
+    // const onSubmit = () => {
+    //     const teamID = !values.teamID ? uuidv4() : values.teamID;
+        
+    //     fetch(`${REACT_APP_API_URL}/auth/register`, {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify({
+    //             user: {
+    //                 userName: values.userName,
+    //                 password: values.password,
+    //                 email: values.email,
+    //                 teamID: teamID,
+    //                 role: values.role,
+    //                 continent: values.continent,
+    //                 region: values.region,
+    //             },
+    //         }),
+    //     })
+    //     .then((response) => response.json())
+    //     .then((data) => {
+    //         navigate("/registered/" + data?.result?.user?.teamID)
+    //     });
+    // }
+
+    
     const onSubmit = () => {
         const teamID = !values.teamID ? uuidv4() : values.teamID;
         
@@ -75,9 +103,24 @@ const Register = () => {
                 },
             }),
         })
-        .then((response) => response.json())
+        .then((response) => {
+            if(!response.ok) {
+                Swal.fire({
+                    icon: "error",
+                    title: "El usuario ya existe!",
+                    text: "Por favor intente nuevamente con otro nombre de usuario."
+                });
+                return;
+            } 
+            return response.json();
+        }) 
         .then((data) => {
-            navigate("/registered/" + data?.result?.user?.teamID)
+            console.log(data);
+            if(!data) {
+                console.log("El usuario ya existe");
+            } else {
+                navigate("/registered/" + data?.result?.user?.teamID);
+            }
         });
     }
 
