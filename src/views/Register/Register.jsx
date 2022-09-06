@@ -110,17 +110,15 @@ const Register = () => {
                     title: "El usuario ya existe!",
                     text: "Por favor intente nuevamente con otro nombre de usuario."
                 });
-                return;
+                throw new Error("El usuario ya existe");
             } 
             return response.json();
         }) 
         .then((data) => {
-            console.log(data);
-            if(!data) {
-                console.log("El usuario ya existe");
-            } else {
-                navigate("/registered/" + data?.result?.user?.teamID);
-            }
+            navigate("/registered/" + data?.result?.user?.teamID);
+        })
+        .catch((error) => {
+            console.log(error);
         });
     }
 
